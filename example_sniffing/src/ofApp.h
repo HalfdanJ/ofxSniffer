@@ -7,6 +7,7 @@ class ofApp : public ofBaseApp{
     
 public:
     void setup();
+    void exit();
     void update();
     void draw();
         
@@ -15,5 +16,5 @@ public:
     void newHttpPacket(ofxLibtinsHttpPacket &packet);
     
     //Almost just like vectors, just better for this example
-    deque<string> incommingPacktes;
+    deque<string> incomingPacktes;
 };

@@ -12,6 +12,11 @@ void ofApp::setup(){
 }
 
 //--------------------------------------------------------------
+void ofApp::exit(){
+    sniffer.stopThread();
+}
+
+//--------------------------------------------------------------
 void ofApp::update(){
 
 }
@@ -19,16 +24,16 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofSetColor(255);
-    for(int i=0;i<incommingPacktes.size();i++){
-        ofDrawBitmapString(incommingPacktes[i], ofPoint(10,20*i+20));
+    for(int i=0;i<incomingPacktes.size();i++){
+        ofDrawBitmapString(incomingPacktes[i], ofPoint(10,20*i+20));
     }
 }
 
 //--------------------------------------------------------------
 void ofApp::newHttpPacket(ofxLibtinsHttpPacket &packet){
-    incommingPacktes.push_back(packet.host+packet.request);
+    incomingPacktes.push_back(packet.host+packet.request);
 
-    if(incommingPacktes.size() > 50){
-        incommingPacktes.pop_front();
+    if(incomingPacktes.size() > 50){
+        incomingPacktes.pop_front();
     }
 }
