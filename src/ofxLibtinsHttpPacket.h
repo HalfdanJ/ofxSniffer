@@ -8,15 +8,31 @@ using namespace Tins;
 
 class ofxLibtinsHttpPacket : public ofxLibtinsPacketWrapper {
 public:
+    
+    string srcIp;  /**< Source IP address. */
+    string dstIp; /**< Destination IP address. */
+    
+    string host;  /**< Hostname in the HTTP request. */
+    string requestType; /**< Request type in the HTTP request (GET/POST...). */
+    string request; /**< The request in the HTTP request. */
+    
+    int srcPort; /**< Source port. */
+    int dstPort; /**< Destination port. */
+    
+    
     ofxLibtinsHttpPacket(){};
     
     ofxLibtinsHttpPacket(Packet packet){
         isValid = false;
 
         try {
-            const Tins::IP &ip = packet.pdu()->rfind_pdu<Tins::IP>(); // Find the IP layer
-            const Tins::TCP &tcp = packet.pdu()->rfind_pdu<Tins::TCP>(); // Find the TCP layer
+            // Find the IP layer
+            const Tins::IP &ip = packet.pdu()->rfind_pdu<Tins::IP>();
+
+            // Find the TCP layer
+            const Tins::TCP &tcp = packet.pdu()->rfind_pdu<Tins::TCP>();
             
+            // Get the raw PDU
             const Tins::RawPDU &raw = packet.pdu()->rfind_pdu<Tins::RawPDU>();
             
             srcIp = ip.src_addr().to_string();
@@ -53,18 +69,5 @@ public:
             }
         } catch(...){
         }
-        
     }
-    
-    string srcIp;
-    string dstIp;
-    
-    string host;
-    string requestType;
-    string request;
-    
-    int srcPort;
-    int dstPort;
-    
-
 };

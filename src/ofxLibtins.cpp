@@ -8,9 +8,6 @@
 
 #include "ofxLibtins.h"
 
-
-
-
 ofxLibtinsSimpleSniffer::ofxLibtinsSimpleSniffer(){
     ofAddListener(ofEvents().update, this, &ofxLibtinsSimpleSniffer::update);
 }
@@ -23,13 +20,17 @@ ofxLibtinsSimpleSniffer::~ofxLibtinsSimpleSniffer(){
 }
 
 
-
-
 void ofxLibtinsSimpleSniffer::startSniffing(string _interface){
     interface = _interface;
+
+    // Sniffer configuration
+    SnifferConfiguration config;
+    config.set_promisc_mode(true);
+    
+    // Create the sniffer instance
+    sniffer =  new Sniffer(interface, config);
     
     startThread(true);
-
 }
 
 void ofxLibtinsSimpleSniffer::update(ofEventArgs & args){
@@ -41,50 +42,26 @@ void ofxLibtinsSimpleSniffer::update(ofEventArgs & args){
 }
 
 
-/*
-bool ofxLibtinsSimpleSniffer::lock(){
-    return ofThread::lock();
-}
-void ofxLibtinsSimpleSniffer::unlock(){
-    ofThread::unlock();
-}*/
-
-
-
-
 void ofxLibtinsSimpleSniffer::threadedFunction()
 {
-    SnifferConfiguration config;
-    //config.set_filter("port 80");
-    config.set_promisc_mode(true);
-    //  config.set_snap_len(400);
-    
-    sniffer =  new Sniffer(interface, config);
-    
     while(isThreadRunning())
     {
         lock();
-
-        Packet packet = sniffer->next_packet();
-
-        // Attempt to lock the mutex.  If blocking is turned on,
-        if(packet)
-        {
-            newRawPacketEvent.notifyAsync(this, packet);
+        
+        try {
+            Packet packet = sniffer->next_packet();
             
-            ofxLibtinsHttpPacket http = ofxLibtinsHttpPacket(packet);
-            if(http.isValid){
-            //    newHttpPacketEvent.notifyAsync(this, http);
-                incomming_http_packets.send(http);
+            if(packet)
+            {
+                newRawPacketEvent.notifyAsync(this, packet);
+                
+                ofxLibtinsHttpPacket http = ofxLibtinsHttpPacket(packet);
+                if(http.isValid){
+                    incomming_http_packets.send(http);
+                }
             }
-            /*
-            if(http.isValid && lock()){
-                cout<<"lock"<<endl;
-                _incommingHttpPackets.push_back(http);
-                cout<<"unlock"<<endl;
-                unlock();
-
-            }*/
+        } catch(...){
+         
         }
         unlock();
     }

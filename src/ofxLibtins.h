@@ -16,21 +16,40 @@ class ofxLibtinsSimpleSniffer : public ofThread {
 public:
     ofxLibtinsSimpleSniffer();
     ~ofxLibtinsSimpleSniffer();
-    void startSniffing(string interface);
 
-    Sniffer * sniffer;
+    /*!
+     The libtins sniffer object
+     */
+    Tins::Sniffer * sniffer;
+
+    
+    /*!
+     Start sniffing on a background thread
+     @param interface The name of the the network interface to sniff on
+     */
+    void startSniffing(string interface="en0");
+
     
     
     /*!
-     Note these events are running on the background thread!
+     Event emitted every time a packet is being sniffed. 
+     
+     Note: This event is being emitted on a background thread!
      */
     ofEvent<Packet> newRawPacketEvent;
+    
+    
+    /*!
+     Event emitted every time a http packet is detected. 
+     This event is emitted on the main thread.
+     */
     ofEvent<ofxLibtinsHttpPacket> newHttpPacketEvent;
     
-    void update(ofEventArgs &);
 
 private:
     void threadedFunction();
+
+    void update(ofEventArgs &);
     
     string interface;
 
