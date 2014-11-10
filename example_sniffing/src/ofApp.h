@@ -11,7 +11,7 @@ public:
     void update();
     void draw();
         
-    ofxLibtinsSimpleSniffer sniffer;
+    ofxSniff sniff;
     
     void httpPacket(ofxLibtinsHttpPacket &packet);
     

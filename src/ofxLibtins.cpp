@@ -2,18 +2,18 @@
 
 #include "ofUtils.h"
 
-ofxLibtinsSimpleSniffer::ofxLibtinsSimpleSniffer(){
-    ofAddListener(ofEvents().update, this, &ofxLibtinsSimpleSniffer::update);
+ofxSniff::ofxSniff(){
+    ofAddListener(ofEvents().update, this, &ofxSniff::update);
 }
 
-ofxLibtinsSimpleSniffer::~ofxLibtinsSimpleSniffer(){
+ofxSniff::~ofxSniff(){
     sniffer->stop_sniff();
     lock();
     delete sniffer;
     unlock();
 }
 
-void ofxLibtinsSimpleSniffer::startSniffing(string _interface, bool monitorMode){
+void ofxSniff::startSniffing(string _interface, bool monitorMode){
     interface = _interface;
 
     // Sniffer configuration
@@ -22,12 +22,12 @@ void ofxLibtinsSimpleSniffer::startSniffing(string _interface, bool monitorMode)
     config.set_rfmon(monitorMode);
     
     // Create the sniffer instance
-    sniffer =  new Sniffer(interface, config);
+    sniffer = new Sniffer(interface, config);
     
     startThread(true);
 }
 
-void ofxLibtinsSimpleSniffer::update(ofEventArgs & args){
+void ofxSniff::update(ofEventArgs & args){
     ofxLibtinsHttpPacket packet;
 
     while(incomming_http_packets.tryReceive(packet)){
@@ -35,7 +35,7 @@ void ofxLibtinsSimpleSniffer::update(ofEventArgs & args){
     }
 }
 
-void ofxLibtinsSimpleSniffer::threadedFunction() {
+void ofxSniff::threadedFunction() {
     while(isThreadRunning()) {
         lock();
         try {

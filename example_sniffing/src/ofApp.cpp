@@ -3,17 +3,17 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     // Add event listener for new http packets
-    ofAddListener(sniffer.httpPacketEvent, this, &ofApp::httpPacket);
+    ofAddListener(sniff.httpPacketEvent, this, &ofApp::httpPacket);
 
     // Start the sniffing
-    sniffer.startSniffing("en0", true);
+    sniff.startSniffing("en0", true);
     
     ofBackground(0, 0, 0);
 }
 
 //--------------------------------------------------------------
 void ofApp::exit(){
-    sniffer.stopThread();
+    sniff.stopThread();
 }
 
 //--------------------------------------------------------------

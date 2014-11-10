@@ -12,10 +12,10 @@
 
 using namespace Tins;
 
-class ofxLibtinsSimpleSniffer : public ofThread {
+class ofxSniff : public ofThread {
 public:
-    ofxLibtinsSimpleSniffer();
-    ~ofxLibtinsSimpleSniffer();
+    ofxSniff();
+    ~ofxSniff();
 
     /*!
      The libtins sniffer object
