@@ -29,7 +29,7 @@ void ofxSniff::startSniffing(string _interface, bool monitorMode){
 
 void ofxSniff::update(ofEventArgs & args){
     ofxLibtinsHttpPacket packet;
-
+    
     while(httpPackets.tryReceive(packet)){
         ofNotifyEvent(httpPacketEvent, packet, this);
     }

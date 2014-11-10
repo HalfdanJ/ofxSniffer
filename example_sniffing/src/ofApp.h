@@ -8,13 +8,13 @@ class ofApp : public ofBaseApp{
 public:
     void setup();
     void exit();
-    void update();
     void draw();
         
     ofxSniff sniff;
     
     void httpPacket(ofxLibtinsHttpPacket &packet);
     
-    //Almost just like vectors, just better for this example
+    // a deque is like a vector that can be
+    // pushed/popped from back or front
     deque<string> incomingPackets;
 };

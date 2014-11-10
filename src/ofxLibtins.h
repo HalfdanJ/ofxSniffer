@@ -4,7 +4,6 @@
 #include "ofThread.h"
 #include "ofEvents.h"
 
-#include "ofxLibtinsPacketWrapper.h"
 #include "ofxLibtinsHttpPacket.h"
 #include "ofThreadChannel.h"
 

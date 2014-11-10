@@ -1,13 +1,13 @@
 #pragma once
 
 #include "tins.h"
-#include "ofxLibtinsPacketWrapper.h"
 
 using namespace Tins;
 
 
-class ofxLibtinsHttpPacket : public ofxLibtinsPacketWrapper {
+class ofxLibtinsHttpPacket {
 public:
+    bool isValid = false;
     
     string srcIp;  /**< Source IP address. */
     string dstIp; /**< Destination IP address. */
@@ -16,15 +16,12 @@ public:
     string requestType; /**< Request type in the HTTP request (GET/POST...). */
     string request; /**< The request in the HTTP request. */
     
-    int srcPort; /**< Source port. */
-    int dstPort; /**< Destination port. */
+    int srcPort = 0; /**< Source port. */
+    int dstPort = 0; /**< Destination port. */
     
+    ofxLibtinsHttpPacket() {}
     
-    ofxLibtinsHttpPacket(){};
-    
-    ofxLibtinsHttpPacket(Packet packet){
-        isValid = false;
-
+    ofxLibtinsHttpPacket(Packet packet) {
         try {
             // Find the IP layer
             const Tins::IP &ip = packet.pdu()->rfind_pdu<Tins::IP>();

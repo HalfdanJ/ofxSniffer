@@ -8,24 +8,19 @@ void ofApp::setup(){
     // Start the sniffing
     sniff.startSniffing("en0", true);
     
-    ofBackground(0, 0, 0);
+    ofBackground(0);
 }
 
 //--------------------------------------------------------------
-void ofApp::exit(){
+void ofApp::exit() {
     sniff.stopThread();
 }
 
 //--------------------------------------------------------------
-void ofApp::update(){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::draw(){
+void ofApp::draw() {
     ofSetColor(255);
-    for(int i=0;i<incomingPackets.size();i++){
-        ofDrawBitmapString(incomingPackets[i], ofPoint(10,20*i+20));
+    for(int i = 0; i < incomingPackets.size(); i++){
+        ofDrawBitmapString(incomingPackets[i], ofPoint(10, 20 * i + 20));
     }
 }
 
