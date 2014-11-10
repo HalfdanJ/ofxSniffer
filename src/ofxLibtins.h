@@ -21,16 +21,13 @@ public:
      The libtins sniffer object
      */
     Tins::Sniffer * sniffer;
-
     
     /*!
      Start sniffing on a background thread
      @param interface The name of the the network interface to sniff on
      */
-    void startSniffing(string interface="en0");
+    void startSniffing(string interface="en0", bool monitorMode = false);
 
-    
-    
     /*!
      Event emitted every time a packet is being sniffed. 
      
@@ -38,22 +35,16 @@ public:
      */
     ofEvent<Packet> newRawPacketEvent;
     
-    
     /*!
      Event emitted every time a http packet is detected. 
      This event is emitted on the main thread.
      */
     ofEvent<ofxLibtinsHttpPacket> newHttpPacketEvent;
     
-
 private:
     void threadedFunction();
-
     void update(ofEventArgs &);
     
     string interface;
-
-
     ofThreadChannel<ofxLibtinsHttpPacket> incomming_http_packets;
-
 };

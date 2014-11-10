@@ -16,5 +16,5 @@ public:
     void newHttpPacket(ofxLibtinsHttpPacket &packet);
     
     //Almost just like vectors, just better for this example
-    deque<string> incomingPacktes;
+    deque<string> incomingPackets;
 };

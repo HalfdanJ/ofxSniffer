@@ -6,7 +6,7 @@ void ofApp::setup(){
     ofAddListener(sniffer.newHttpPacketEvent, this, &ofApp::newHttpPacket);
 
     // Start the sniffing
-    sniffer.startSniffing("en0");
+    sniffer.startSniffing("en0", true);
     
     ofBackground(0, 0, 0);
 }
@@ -24,16 +24,16 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofSetColor(255);
-    for(int i=0;i<incomingPacktes.size();i++){
-        ofDrawBitmapString(incomingPacktes[i], ofPoint(10,20*i+20));
+    for(int i=0;i<incomingPackets.size();i++){
+        ofDrawBitmapString(incomingPackets[i], ofPoint(10,20*i+20));
     }
 }
 
 //--------------------------------------------------------------
 void ofApp::newHttpPacket(ofxLibtinsHttpPacket &packet){
-    incomingPacktes.push_back(packet.host+packet.request);
+    incomingPackets.push_back(packet.host+packet.request);
 
-    if(incomingPacktes.size() > 50){
-        incomingPacktes.pop_front();
+    while(incomingPackets.size() > 50){
+        incomingPackets.pop_front();
     }
 }

@@ -1,12 +1,6 @@
-//
-//  ofxLibtins.cpp
-//  NetworkStream
-//
-//  Created by Jonas Jongejan on 29/10/14.
-//
-//
-
 #include "ofxLibtins.h"
+
+#include "ofUtils.h"
 
 ofxLibtinsSimpleSniffer::ofxLibtinsSimpleSniffer(){
     ofAddListener(ofEvents().update, this, &ofxLibtinsSimpleSniffer::update);
@@ -19,13 +13,13 @@ ofxLibtinsSimpleSniffer::~ofxLibtinsSimpleSniffer(){
     unlock();
 }
 
-
-void ofxLibtinsSimpleSniffer::startSniffing(string _interface){
+void ofxLibtinsSimpleSniffer::startSniffing(string _interface, bool monitorMode){
     interface = _interface;
 
     // Sniffer configuration
     SnifferConfiguration config;
     config.set_promisc_mode(true);
+    config.set_rfmon(monitorMode);
     
     // Create the sniffer instance
     sniffer =  new Sniffer(interface, config);
@@ -41,27 +35,19 @@ void ofxLibtinsSimpleSniffer::update(ofEventArgs & args){
     }
 }
 
-
-void ofxLibtinsSimpleSniffer::threadedFunction()
-{
-    while(isThreadRunning())
-    {
+void ofxLibtinsSimpleSniffer::threadedFunction() {
+    while(isThreadRunning()) {
         lock();
-        
         try {
             Packet packet = sniffer->next_packet();
-            
-            if(packet)
-            {
+            if(packet) {
                 newRawPacketEvent.notifyAsync(this, packet);
-                
                 ofxLibtinsHttpPacket http = ofxLibtinsHttpPacket(packet);
                 if(http.isValid){
                     incomming_http_packets.send(http);
                 }
             }
-        } catch(...){
-         
+        } catch(...) {
         }
         unlock();
     }
