@@ -46,5 +46,5 @@ private:
     void update(ofEventArgs &);
     
     string interface;
-    ofThreadChannel<ofxLibtinsHttpPacket> incomming_http_packets;
+    ofThreadChannel<ofxLibtinsHttpPacket> httpPackets;
 };
