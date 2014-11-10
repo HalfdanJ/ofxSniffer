@@ -13,7 +13,7 @@ public:
         
     ofxLibtinsSimpleSniffer sniffer;
     
-    void newHttpPacket(ofxLibtinsHttpPacket &packet);
+    void httpPacket(ofxLibtinsHttpPacket &packet);
     
     //Almost just like vectors, just better for this example
     deque<string> incomingPackets;

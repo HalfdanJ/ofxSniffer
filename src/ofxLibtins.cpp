@@ -31,7 +31,7 @@ void ofxLibtinsSimpleSniffer::update(ofEventArgs & args){
     ofxLibtinsHttpPacket packet;
 
     while(incomming_http_packets.tryReceive(packet)){
-        ofNotifyEvent(newHttpPacketEvent, packet, this);
+        ofNotifyEvent(httpPacketEvent, packet, this);
     }
 }
 

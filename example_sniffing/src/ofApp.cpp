@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     // Add event listener for new http packets
-    ofAddListener(sniffer.newHttpPacketEvent, this, &ofApp::newHttpPacket);
+    ofAddListener(sniffer.httpPacketEvent, this, &ofApp::httpPacket);
 
     // Start the sniffing
     sniffer.startSniffing("en0", true);
@@ -30,7 +30,7 @@ void ofApp::draw(){
 }
 
 //--------------------------------------------------------------
-void ofApp::newHttpPacket(ofxLibtinsHttpPacket &packet){
+void ofApp::httpPacket(ofxLibtinsHttpPacket &packet){
     incomingPackets.push_back(packet.host+packet.request);
 
     while(incomingPackets.size() > 50){

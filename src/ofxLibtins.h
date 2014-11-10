@@ -39,7 +39,7 @@ public:
      Event emitted every time a http packet is detected. 
      This event is emitted on the main thread.
      */
-    ofEvent<ofxLibtinsHttpPacket> newHttpPacketEvent;
+    ofEvent<ofxLibtinsHttpPacket> httpPacketEvent;
     
 private:
     void threadedFunction();
