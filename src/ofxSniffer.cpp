@@ -28,7 +28,7 @@ void ofxSniff::startSniffing(string _interface, bool monitorMode){
 }
 
 void ofxSniff::update(ofEventArgs & args){
-    ofxLibtinsHttpPacket packet;
+    ofxSnifferHttpPacket packet;
     
     while(httpPackets.tryReceive(packet)){
         ofNotifyEvent(httpPacketEvent, packet, this);
@@ -42,7 +42,7 @@ void ofxSniff::threadedFunction() {
             Packet packet = sniffer->next_packet();
             if(packet) {
                 newRawPacketEvent.notifyAsync(this, packet);
-                ofxLibtinsHttpPacket http = ofxLibtinsHttpPacket(packet);
+                ofxSnifferHttpPacket http = ofxSnifferHttpPacket(packet);
                 if(http.isValid){
                     httpPackets.send(http);
                 }
