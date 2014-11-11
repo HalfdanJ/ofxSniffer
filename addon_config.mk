@@ -15,11 +15,11 @@
 # and the PG will write to the console the kind of error and in which line it is
 
 meta:
-	ADDON_NAME = ofxLibtins
+	ADDON_NAME = ofxSniffer
 	ADDON_DESCRIPTION = ANetwork packet sniffing and crafting wrapper based on the libtins library.
 	ADDON_AUTHOR = Jonas Jongejan
 	ADDON_TAGS = "network"
-	ADDON_URL = http://github.com/HalfdanJ/ofxLibtins
+	ADDON_URL = http://github.com/HalfdanJ/ofxSniffer
 
 common:
 	# dependencies with other addons, a list of them separated by spaces 

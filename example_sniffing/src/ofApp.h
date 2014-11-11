@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxLibtins.h"
+#include "ofxSniffer.h"
 
 class ofApp : public ofBaseApp{
     
@@ -12,7 +12,7 @@ public:
         
     ofxSniff sniff;
     
-    void httpPacket(ofxLibtinsHttpPacket &packet);
+    void httpPacket(ofxSnifferHttpPacket &packet);
     
     // a deque is like a vector that can be
     // pushed/popped from back or front

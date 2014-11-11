@@ -4,7 +4,7 @@
 #include "ofThread.h"
 #include "ofEvents.h"
 
-#include "ofxLibtinsHttpPacket.h"
+#include "ofxSnifferHttpPacket.h"
 #include "ofThreadChannel.h"
 
 #include "tins.h"
@@ -38,12 +38,12 @@ public:
      Event emitted every time a http packet is detected. 
      This event is emitted on the main thread.
      */
-    ofEvent<ofxLibtinsHttpPacket> httpPacketEvent;
+    ofEvent<ofxSnifferHttpPacket> httpPacketEvent;
     
 private:
     void threadedFunction();
     void update(ofEventArgs &);
     
     string interface;
-    ofThreadChannel<ofxLibtinsHttpPacket> httpPackets;
+    ofThreadChannel<ofxSnifferHttpPacket> httpPackets;
 };

@@ -25,7 +25,7 @@ void ofApp::draw() {
 }
 
 //--------------------------------------------------------------
-void ofApp::httpPacket(ofxLibtinsHttpPacket &packet){
+void ofApp::httpPacket(ofxSnifferHttpPacket &packet){
     incomingPackets.push_back(packet.host+packet.request);
 
     while(incomingPackets.size() > 50){
