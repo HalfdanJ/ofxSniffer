@@ -3,7 +3,7 @@ Wrapper for the [libtins library](http://libtins.github.io). Libtins can be used
 
 The addon currently implements a simple packet sniffer `ofxSnifferSimple` running in a background thread, and a http interpreter. This makes it super easy to sniff http traffic. But the addon can also be used just as a way to include the libtins library that has many many other uses. 
 
-### Build libraries
+### Build Libraries
 ***Note:*** *If you dont want to build the libraries yourself, then download the [release](https://github.com/HalfdanJ/ofxSniffer/releases) instead*
 
 The static libraries are build with [apothecary](https://github.com/openframeworks/apothecary). 
@@ -13,3 +13,11 @@ cd scripts/apothecary
 ./apothecary update ofxSniffer
 ```
 This will build libtins and libpcap. Currently only tested on mac os, but should work under linux and windows (with some modifications to the formula).
+
+### Known Issues
+**Permission denied opening dev/bpf0**
+
+In some cases you need to gain access to read from you network card (See more on issue #2). You can do this by running the command
+
+    sudo chmod o+r /dev/bpf*
+
