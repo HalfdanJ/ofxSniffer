@@ -10,8 +10,10 @@
 		6474CBF619BCE019003C94E2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6474CBF019BCE00B003C94E2 /* AVFoundation.framework */; };
 		6474CBF719BCE019003C94E2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6474CBF119BCE00B003C94E2 /* CoreMedia.framework */; };
 		6474CBF819BCE019003C94E2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6474CBF219BCE00B003C94E2 /* QuartzCore.framework */; };
-		8AD1A3A9F2C2688E4FAB2CDA /* ofxLibtins.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD50D0E55AD1AECB0050BA20 /* ofxLibtins.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
+		DD78C4D41A11DEAC00186203 /* ofxSniffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD78C4801A11DEAC00186203 /* ofxSniffer.cpp */; };
+		DD78C4D51A11DEAC00186203 /* libpcap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD78C4871A11DEAC00186203 /* libpcap.a */; };
+		DD78C4D61A11DEAC00186203 /* libtins.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD78C4D31A11DEAC00186203 /* libtins.a */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
 		E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */; };
@@ -63,71 +65,84 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		01F8E56565328E90A576426E /* ipsec.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ipsec.h; path = ../../../addons/ofxLibtins/libs/libtins/include/ipsec.h; sourceTree = SOURCE_ROOT; };
-		032937C05529EAE394E19AEC /* tins.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = tins.h; path = ../../../addons/ofxLibtins/libs/libtins/include/tins.h; sourceTree = SOURCE_ROOT; };
-		083EFAA49D7BA994B9391A76 /* dot11_auth.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = dot11_auth.h; path = ../../../addons/ofxLibtins/libs/libtins/include/dot11/dot11_auth.h; sourceTree = SOURCE_ROOT; };
-		0A49BB7CD2AB37FC9EFAEEF4 /* timestamp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = timestamp.h; path = ../../../addons/ofxLibtins/libs/libtins/include/timestamp.h; sourceTree = SOURCE_ROOT; };
-		0D5464C10E9886FD27AA2851 /* ppi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ppi.h; path = ../../../addons/ofxLibtins/libs/libtins/include/ppi.h; sourceTree = SOURCE_ROOT; };
-		11F21D8E90FC2FC42620E5FF /* dot11_mgmt.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = dot11_mgmt.h; path = ../../../addons/ofxLibtins/libs/libtins/include/dot11/dot11_mgmt.h; sourceTree = SOURCE_ROOT; };
-		12774A5FA304D368D84F8CD0 /* dns.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = dns.h; path = ../../../addons/ofxLibtins/libs/libtins/include/dns.h; sourceTree = SOURCE_ROOT; };
-		18467CD48BA8BB813BDD2866 /* ethernetII.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ethernetII.h; path = ../../../addons/ofxLibtins/libs/libtins/include/ethernetII.h; sourceTree = SOURCE_ROOT; };
-		1DDCC3D0F2AAA8E3B858AF71 /* small_uint.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = small_uint.h; path = ../../../addons/ofxLibtins/libs/libtins/include/small_uint.h; sourceTree = SOURCE_ROOT; };
-		250269F188C69DDE94A10EF1 /* data_link_type.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = data_link_type.h; path = ../../../addons/ofxLibtins/libs/libtins/include/data_link_type.h; sourceTree = SOURCE_ROOT; };
-		2B58B9620C9C0A17EFC58641 /* ofxLibtinsHttpPacket.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxLibtinsHttpPacket.h; path = ../../../addons/ofxLibtins/src/ofxLibtinsHttpPacket.h; sourceTree = SOURCE_ROOT; };
-		2C37893CBAF0C463ECA670DF /* pdu_allocator.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = pdu_allocator.h; path = ../../../addons/ofxLibtins/libs/libtins/include/pdu_allocator.h; sourceTree = SOURCE_ROOT; };
-		2D495AC430108AE530228AF9 /* dot11_control.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = dot11_control.h; path = ../../../addons/ofxLibtins/libs/libtins/include/dot11/dot11_control.h; sourceTree = SOURCE_ROOT; };
-		35264992D85F0B216828CDD9 /* network_interface.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = network_interface.h; path = ../../../addons/ofxLibtins/libs/libtins/include/network_interface.h; sourceTree = SOURCE_ROOT; };
-		38DE1E933202415E82584FFE /* loopback.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = loopback.h; path = ../../../addons/ofxLibtins/libs/libtins/include/loopback.h; sourceTree = SOURCE_ROOT; };
-		3A2269F4C1E0BFC0EA0D5CF0 /* ip.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ip.h; path = ../../../addons/ofxLibtins/libs/libtins/include/ip.h; sourceTree = SOURCE_ROOT; };
-		3EF3771912C482E4C779CF84 /* packet_writer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = packet_writer.h; path = ../../../addons/ofxLibtins/libs/libtins/include/packet_writer.h; sourceTree = SOURCE_ROOT; };
-		3F626547B0D006F06BE24588 /* crypto.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = crypto.h; path = ../../../addons/ofxLibtins/libs/libtins/include/crypto.h; sourceTree = SOURCE_ROOT; };
-		435B2388759B0DF4199D855B /* llc.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = llc.h; path = ../../../addons/ofxLibtins/libs/libtins/include/llc.h; sourceTree = SOURCE_ROOT; };
-		437187CE36E3056C08CDE697 /* cxxstd.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = cxxstd.h; path = ../../../addons/ofxLibtins/libs/libtins/include/cxxstd.h; sourceTree = SOURCE_ROOT; };
-		466F910789FAA347D1532209 /* constants.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = constants.h; path = ../../../addons/ofxLibtins/libs/libtins/include/constants.h; sourceTree = SOURCE_ROOT; };
-		492898E43E641C1D6CE77C88 /* macros.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = macros.h; path = ../../../addons/ofxLibtins/libs/libtins/include/macros.h; sourceTree = SOURCE_ROOT; };
-		4F85440D5C6CFE6DA3DF5752 /* internals.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = internals.h; path = ../../../addons/ofxLibtins/libs/libtins/include/internals.h; sourceTree = SOURCE_ROOT; };
-		514080C95E0C23D1F6262FF9 /* arp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = arp.h; path = ../../../addons/ofxLibtins/libs/libtins/include/arp.h; sourceTree = SOURCE_ROOT; };
-		58EE1A362613BDAE60EF1E28 /* handshake_capturer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = handshake_capturer.h; path = ../../../addons/ofxLibtins/libs/libtins/include/handshake_capturer.h; sourceTree = SOURCE_ROOT; };
-		6129778016F302DB06C76A30 /* stp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = stp.h; path = ../../../addons/ofxLibtins/libs/libtins/include/stp.h; sourceTree = SOURCE_ROOT; };
-		624B402B94E3DD76397A0648 /* ipv6_address.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ipv6_address.h; path = ../../../addons/ofxLibtins/libs/libtins/include/ipv6_address.h; sourceTree = SOURCE_ROOT; };
 		6474CBF019BCE00B003C94E2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6474CBF119BCE00B003C94E2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		6474CBF219BCE00B003C94E2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		65DEE0A7BA0DCE7BCFEE65C2 /* snap.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = snap.h; path = ../../../addons/ofxLibtins/libs/libtins/include/snap.h; sourceTree = SOURCE_ROOT; };
-		678B0E4961E4C37EBD2DA8AE /* ip_address.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ip_address.h; path = ../../../addons/ofxLibtins/libs/libtins/include/ip_address.h; sourceTree = SOURCE_ROOT; };
-		6BDAFB1AD0B987A0EC31BE0D /* exceptions.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = exceptions.h; path = ../../../addons/ofxLibtins/libs/libtins/include/exceptions.h; sourceTree = SOURCE_ROOT; };
-		7466F66F107B384EB1435137 /* packet_sender.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = packet_sender.h; path = ../../../addons/ofxLibtins/libs/libtins/include/packet_sender.h; sourceTree = SOURCE_ROOT; };
-		76BAE8F8349D9BF2E531C15B /* pdu.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = pdu.h; path = ../../../addons/ofxLibtins/libs/libtins/include/pdu.h; sourceTree = SOURCE_ROOT; };
-		7AEF13A8EF20B40A5E3DC26F /* icmpv6.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = icmpv6.h; path = ../../../addons/ofxLibtins/libs/libtins/include/icmpv6.h; sourceTree = SOURCE_ROOT; };
-		7B5B6B443F402EB687C90B7C /* sll.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = sll.h; path = ../../../addons/ofxLibtins/libs/libtins/include/sll.h; sourceTree = SOURCE_ROOT; };
-		7B5D1E98DF0B3F3523983086 /* dot3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = dot3.h; path = ../../../addons/ofxLibtins/libs/libtins/include/dot3.h; sourceTree = SOURCE_ROOT; };
-		7CEED8B30FD2D377DE3C3353 /* address_range.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = address_range.h; path = ../../../addons/ofxLibtins/libs/libtins/include/address_range.h; sourceTree = SOURCE_ROOT; };
-		7D4102C94E2610F42237630A /* dot11_assoc.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = dot11_assoc.h; path = ../../../addons/ofxLibtins/libs/libtins/include/dot11/dot11_assoc.h; sourceTree = SOURCE_ROOT; };
-		7FFA07B4EFD986EC0AA8F5E9 /* ip_reassembler.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ip_reassembler.h; path = ../../../addons/ofxLibtins/libs/libtins/include/ip_reassembler.h; sourceTree = SOURCE_ROOT; };
-		8086A0229807FDCCC7A3D09E /* dot1q.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = dot1q.h; path = ../../../addons/ofxLibtins/libs/libtins/include/dot1q.h; sourceTree = SOURCE_ROOT; };
-		86F9610D5D3D678763BDE773 /* ipv6.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ipv6.h; path = ../../../addons/ofxLibtins/libs/libtins/include/ipv6.h; sourceTree = SOURCE_ROOT; };
-		8ACEF97636D8603BD2EBA9E7 /* packet.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = packet.h; path = ../../../addons/ofxLibtins/libs/libtins/include/packet.h; sourceTree = SOURCE_ROOT; };
-		8BEED11EA238A1A323C0BA5F /* pppoe.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = pppoe.h; path = ../../../addons/ofxLibtins/libs/libtins/include/pppoe.h; sourceTree = SOURCE_ROOT; };
-		9037AE5FC8733BD3D8EC3AD4 /* endianness.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = endianness.h; path = ../../../addons/ofxLibtins/libs/libtins/include/endianness.h; sourceTree = SOURCE_ROOT; };
-		9CBEFB7B54315E75ADE7B53D /* pdu_option.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = pdu_option.h; path = ../../../addons/ofxLibtins/libs/libtins/include/pdu_option.h; sourceTree = SOURCE_ROOT; };
-		9D28A3904B87A871423EB319 /* radiotap.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = radiotap.h; path = ../../../addons/ofxLibtins/libs/libtins/include/radiotap.h; sourceTree = SOURCE_ROOT; };
-		AA59637AE645839C1D9479F3 /* tcp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = tcp.h; path = ../../../addons/ofxLibtins/libs/libtins/include/tcp.h; sourceTree = SOURCE_ROOT; };
-		AE2DBF832A42BCF43D53C95E /* dot11_data.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = dot11_data.h; path = ../../../addons/ofxLibtins/libs/libtins/include/dot11/dot11_data.h; sourceTree = SOURCE_ROOT; };
-		AECE8F93814362ADBC7F9B9C /* pdu_cacher.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = pdu_cacher.h; path = ../../../addons/ofxLibtins/libs/libtins/include/pdu_cacher.h; sourceTree = SOURCE_ROOT; };
-		B0377560540F58BC1AF58865 /* ieee802_3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ieee802_3.h; path = ../../../addons/ofxLibtins/libs/libtins/include/ieee802_3.h; sourceTree = SOURCE_ROOT; };
-		B9946261B4A7F42E9FCD8E5A /* hw_address.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = hw_address.h; path = ../../../addons/ofxLibtins/libs/libtins/include/hw_address.h; sourceTree = SOURCE_ROOT; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
-		BC53A4D126323277D887D858 /* offline_packet_filter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = offline_packet_filter.h; path = ../../../addons/ofxLibtins/libs/libtins/include/offline_packet_filter.h; sourceTree = SOURCE_ROOT; };
-		C0C01AFD58324CADD901D4DC /* dot11_base.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = dot11_base.h; path = ../../../addons/ofxLibtins/libs/libtins/include/dot11/dot11_base.h; sourceTree = SOURCE_ROOT; };
-		C9241CB5BBA55E3288B9D942 /* icmp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = icmp.h; path = ../../../addons/ofxLibtins/libs/libtins/include/icmp.h; sourceTree = SOURCE_ROOT; };
-		CA8725DF10009B354F714D49 /* sniffer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = sniffer.h; path = ../../../addons/ofxLibtins/libs/libtins/include/sniffer.h; sourceTree = SOURCE_ROOT; };
-		CB27BACE877145CCD4282E61 /* utils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = utils.h; path = ../../../addons/ofxLibtins/libs/libtins/include/utils.h; sourceTree = SOURCE_ROOT; };
-		CBD33B71B9977CC0EB4D852F /* dhcpv6.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = dhcpv6.h; path = ../../../addons/ofxLibtins/libs/libtins/include/dhcpv6.h; sourceTree = SOURCE_ROOT; };
-		CD6B88F24EB9CF3BF70B9050 /* config.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = config.h; path = ../../../addons/ofxLibtins/libs/libtins/include/config.h; sourceTree = SOURCE_ROOT; };
-		CE098DBCAF6B9D59BB0B5F54 /* dot11_probe.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = dot11_probe.h; path = ../../../addons/ofxLibtins/libs/libtins/include/dot11/dot11_probe.h; sourceTree = SOURCE_ROOT; };
-		D3A22467E284A4F9FFCA6D41 /* ofxLibtins.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxLibtins.h; path = ../../../addons/ofxLibtins/src/ofxLibtins.h; sourceTree = SOURCE_ROOT; };
-		D58B51D627CD37ADB89E2721 /* bootp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = bootp.h; path = ../../../addons/ofxLibtins/libs/libtins/include/bootp.h; sourceTree = SOURCE_ROOT; };
-		DC1D80AF5E6BD6B933A35F5F /* tcp_stream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = tcp_stream.h; path = ../../../addons/ofxLibtins/libs/libtins/include/tcp_stream.h; sourceTree = SOURCE_ROOT; };
+		DD78C4801A11DEAC00186203 /* ofxSniffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSniffer.cpp; sourceTree = "<group>"; };
+		DD78C4811A11DEAC00186203 /* ofxSniffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxSniffer.h; sourceTree = "<group>"; };
+		DD78C4821A11DEAC00186203 /* ofxSnifferHttpPacket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxSnifferHttpPacket.h; sourceTree = "<group>"; };
+		DD78C4871A11DEAC00186203 /* libpcap.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpcap.a; sourceTree = "<group>"; };
+		DD78C48A1A11DEAC00186203 /* address_range.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = address_range.h; sourceTree = "<group>"; };
+		DD78C48B1A11DEAC00186203 /* arp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arp.h; sourceTree = "<group>"; };
+		DD78C48C1A11DEAC00186203 /* bootp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bootp.h; sourceTree = "<group>"; };
+		DD78C48D1A11DEAC00186203 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		DD78C48E1A11DEAC00186203 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		DD78C48F1A11DEAC00186203 /* config.h.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = config.h.in; sourceTree = "<group>"; };
+		DD78C4901A11DEAC00186203 /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		DD78C4911A11DEAC00186203 /* crypto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto.h; sourceTree = "<group>"; };
+		DD78C4921A11DEAC00186203 /* cxxstd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cxxstd.h; sourceTree = "<group>"; };
+		DD78C4931A11DEAC00186203 /* data_link_type.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = data_link_type.h; sourceTree = "<group>"; };
+		DD78C4941A11DEAC00186203 /* dhcp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dhcp.h; sourceTree = "<group>"; };
+		DD78C4951A11DEAC00186203 /* dhcpv6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dhcpv6.h; sourceTree = "<group>"; };
+		DD78C4961A11DEAC00186203 /* dns.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dns.h; sourceTree = "<group>"; };
+		DD78C4981A11DEAC00186203 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		DD78C4991A11DEAC00186203 /* dot11_assoc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dot11_assoc.h; sourceTree = "<group>"; };
+		DD78C49A1A11DEAC00186203 /* dot11_auth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dot11_auth.h; sourceTree = "<group>"; };
+		DD78C49B1A11DEAC00186203 /* dot11_base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dot11_base.h; sourceTree = "<group>"; };
+		DD78C49C1A11DEAC00186203 /* dot11_beacon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dot11_beacon.h; sourceTree = "<group>"; };
+		DD78C49D1A11DEAC00186203 /* dot11_control.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dot11_control.h; sourceTree = "<group>"; };
+		DD78C49E1A11DEAC00186203 /* dot11_data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dot11_data.h; sourceTree = "<group>"; };
+		DD78C49F1A11DEAC00186203 /* dot11_mgmt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dot11_mgmt.h; sourceTree = "<group>"; };
+		DD78C4A01A11DEAC00186203 /* dot11_probe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dot11_probe.h; sourceTree = "<group>"; };
+		DD78C4A11A11DEAC00186203 /* dot11.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dot11.h; sourceTree = "<group>"; };
+		DD78C4A21A11DEAC00186203 /* dot1q.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dot1q.h; sourceTree = "<group>"; };
+		DD78C4A31A11DEAC00186203 /* dot3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dot3.h; sourceTree = "<group>"; };
+		DD78C4A41A11DEAC00186203 /* eapol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = eapol.h; sourceTree = "<group>"; };
+		DD78C4A51A11DEAC00186203 /* endianness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = endianness.h; sourceTree = "<group>"; };
+		DD78C4A61A11DEAC00186203 /* ethernetII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ethernetII.h; sourceTree = "<group>"; };
+		DD78C4A71A11DEAC00186203 /* exceptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = exceptions.h; sourceTree = "<group>"; };
+		DD78C4A81A11DEAC00186203 /* handshake_capturer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = handshake_capturer.h; sourceTree = "<group>"; };
+		DD78C4A91A11DEAC00186203 /* hw_address.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hw_address.h; sourceTree = "<group>"; };
+		DD78C4AA1A11DEAC00186203 /* icmp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = icmp.h; sourceTree = "<group>"; };
+		DD78C4AB1A11DEAC00186203 /* icmpv6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = icmpv6.h; sourceTree = "<group>"; };
+		DD78C4AC1A11DEAC00186203 /* ieee802_3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ieee802_3.h; sourceTree = "<group>"; };
+		DD78C4AD1A11DEAC00186203 /* internals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = internals.h; sourceTree = "<group>"; };
+		DD78C4AE1A11DEAC00186203 /* ip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ip.h; sourceTree = "<group>"; };
+		DD78C4AF1A11DEAC00186203 /* ip_address.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ip_address.h; sourceTree = "<group>"; };
+		DD78C4B01A11DEAC00186203 /* ip_reassembler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ip_reassembler.h; sourceTree = "<group>"; };
+		DD78C4B11A11DEAC00186203 /* ipsec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ipsec.h; sourceTree = "<group>"; };
+		DD78C4B21A11DEAC00186203 /* ipv6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ipv6.h; sourceTree = "<group>"; };
+		DD78C4B31A11DEAC00186203 /* ipv6_address.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ipv6_address.h; sourceTree = "<group>"; };
+		DD78C4B51A11DEAC00186203 /* llc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = llc.h; sourceTree = "<group>"; };
+		DD78C4B61A11DEAC00186203 /* loopback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = loopback.h; sourceTree = "<group>"; };
+		DD78C4B71A11DEAC00186203 /* macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macros.h; sourceTree = "<group>"; };
+		DD78C4B81A11DEAC00186203 /* network_interface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = network_interface.h; sourceTree = "<group>"; };
+		DD78C4B91A11DEAC00186203 /* offline_packet_filter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = offline_packet_filter.h; sourceTree = "<group>"; };
+		DD78C4BA1A11DEAC00186203 /* packet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = packet.h; sourceTree = "<group>"; };
+		DD78C4BB1A11DEAC00186203 /* packet_sender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = packet_sender.h; sourceTree = "<group>"; };
+		DD78C4BC1A11DEAC00186203 /* packet_writer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = packet_writer.h; sourceTree = "<group>"; };
+		DD78C4BD1A11DEAC00186203 /* pdu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pdu.h; sourceTree = "<group>"; };
+		DD78C4BE1A11DEAC00186203 /* pdu_allocator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pdu_allocator.h; sourceTree = "<group>"; };
+		DD78C4BF1A11DEAC00186203 /* pdu_cacher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pdu_cacher.h; sourceTree = "<group>"; };
+		DD78C4C01A11DEAC00186203 /* pdu_option.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pdu_option.h; sourceTree = "<group>"; };
+		DD78C4C11A11DEAC00186203 /* ppi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ppi.h; sourceTree = "<group>"; };
+		DD78C4C21A11DEAC00186203 /* pppoe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pppoe.h; sourceTree = "<group>"; };
+		DD78C4C31A11DEAC00186203 /* radiotap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = radiotap.h; sourceTree = "<group>"; };
+		DD78C4C41A11DEAC00186203 /* rawpdu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rawpdu.h; sourceTree = "<group>"; };
+		DD78C4C51A11DEAC00186203 /* rsn_information.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rsn_information.h; sourceTree = "<group>"; };
+		DD78C4C61A11DEAC00186203 /* sll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sll.h; sourceTree = "<group>"; };
+		DD78C4C71A11DEAC00186203 /* small_uint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = small_uint.h; sourceTree = "<group>"; };
+		DD78C4C81A11DEAC00186203 /* snap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = snap.h; sourceTree = "<group>"; };
+		DD78C4C91A11DEAC00186203 /* sniffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sniffer.h; sourceTree = "<group>"; };
+		DD78C4CA1A11DEAC00186203 /* stp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stp.h; sourceTree = "<group>"; };
+		DD78C4CB1A11DEAC00186203 /* tcp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tcp.h; sourceTree = "<group>"; };
+		DD78C4CC1A11DEAC00186203 /* tcp_stream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tcp_stream.h; sourceTree = "<group>"; };
+		DD78C4CD1A11DEAC00186203 /* timestamp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = timestamp.h; sourceTree = "<group>"; };
+		DD78C4CE1A11DEAC00186203 /* tins.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tins.h; sourceTree = "<group>"; };
+		DD78C4CF1A11DEAC00186203 /* udp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = udp.h; sourceTree = "<group>"; };
+		DD78C4D01A11DEAC00186203 /* utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		DD78C4D31A11DEAC00186203 /* libtins.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtins.a; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
 		E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
@@ -147,17 +162,9 @@
 		E4C2424610CC5A17004149E2 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = ../../../libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig; sourceTree = SOURCE_ROOT; };
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
-		E764DF564630020574505E87 /* rsn_information.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = rsn_information.h; path = ../../../addons/ofxLibtins/libs/libtins/include/rsn_information.h; sourceTree = SOURCE_ROOT; };
 		E7E077E415D3B63C0020DFD4 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		E7E077E715D3B6510020DFD4 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		E7F985F515E0DE99003869B5 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = /System/Library/Frameworks/Accelerate.framework; sourceTree = "<absolute>"; };
-		EB4F1B9D17A67790B6752DB4 /* dhcp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = dhcp.h; path = ../../../addons/ofxLibtins/libs/libtins/include/dhcp.h; sourceTree = SOURCE_ROOT; };
-		F3DFC95408C53174B1469E02 /* dot11_beacon.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = dot11_beacon.h; path = ../../../addons/ofxLibtins/libs/libtins/include/dot11/dot11_beacon.h; sourceTree = SOURCE_ROOT; };
-		F8B4E1BEF28224D9E257D551 /* eapol.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = eapol.h; path = ../../../addons/ofxLibtins/libs/libtins/include/eapol.h; sourceTree = SOURCE_ROOT; };
-		FA7FED78571BA03FEC671CFA /* dot11.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = dot11.h; path = ../../../addons/ofxLibtins/libs/libtins/include/dot11.h; sourceTree = SOURCE_ROOT; };
-		FB4145E9E98996F17D5AA5BD /* rawpdu.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = rawpdu.h; path = ../../../addons/ofxLibtins/libs/libtins/include/rawpdu.h; sourceTree = SOURCE_ROOT; };
-		FBA16D98A3A068D50D7EA7F9 /* udp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = udp.h; path = ../../../addons/ofxLibtins/libs/libtins/include/udp.h; sourceTree = SOURCE_ROOT; };
-		FD50D0E55AD1AECB0050BA20 /* ofxLibtins.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxLibtins.cpp; path = ../../../addons/ofxLibtins/src/ofxLibtins.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +183,7 @@
 				E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */,
 				E45BE97D0E8CC7DD009D7055 /* AudioToolbox.framework in Frameworks */,
 				E45BE97F0E8CC7DD009D7055 /* CoreAudio.framework in Frameworks */,
+				DD78C4D51A11DEAC00186203 /* libpcap.a in Frameworks */,
 				E45BE9800E8CC7DD009D7055 /* CoreFoundation.framework in Frameworks */,
 				E45BE9810E8CC7DD009D7055 /* CoreServices.framework in Frameworks */,
 				E45BE9830E8CC7DD009D7055 /* OpenGL.framework in Frameworks */,
@@ -184,124 +192,17 @@
 				E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */,
 				E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */,
 				E7E077E515D3B63C0020DFD4 /* CoreVideo.framework in Frameworks */,
+				DD78C4D61A11DEAC00186203 /* libtins.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F0AFACAC911AF409289B95B /* ofxLibtins */ = {
-			isa = PBXGroup;
-			children = (
-				8CF22D2C941E0667ED7A5DE7 /* src */,
-				D5D995C652CB6BF725A4E375 /* libs */,
-			);
-			name = ofxLibtins;
-			sourceTree = "<group>";
-		};
-		4FAEFDD98C26A789DA13425F /* dot11 */ = {
-			isa = PBXGroup;
-			children = (
-				7D4102C94E2610F42237630A /* dot11_assoc.h */,
-				083EFAA49D7BA994B9391A76 /* dot11_auth.h */,
-				C0C01AFD58324CADD901D4DC /* dot11_base.h */,
-				F3DFC95408C53174B1469E02 /* dot11_beacon.h */,
-				2D495AC430108AE530228AF9 /* dot11_control.h */,
-				AE2DBF832A42BCF43D53C95E /* dot11_data.h */,
-				11F21D8E90FC2FC42620E5FF /* dot11_mgmt.h */,
-				CE098DBCAF6B9D59BB0B5F54 /* dot11_probe.h */,
-			);
-			name = dot11;
-			sourceTree = "<group>";
-		};
-		657FE90A0AB258E67C693240 /* libtins */ = {
-			isa = PBXGroup;
-			children = (
-				83DA3D958ED09101549FE473 /* include */,
-			);
-			name = libtins;
-			sourceTree = "<group>";
-		};
-		83DA3D958ED09101549FE473 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				7CEED8B30FD2D377DE3C3353 /* address_range.h */,
-				514080C95E0C23D1F6262FF9 /* arp.h */,
-				D58B51D627CD37ADB89E2721 /* bootp.h */,
-				CD6B88F24EB9CF3BF70B9050 /* config.h */,
-				466F910789FAA347D1532209 /* constants.h */,
-				3F626547B0D006F06BE24588 /* crypto.h */,
-				437187CE36E3056C08CDE697 /* cxxstd.h */,
-				250269F188C69DDE94A10EF1 /* data_link_type.h */,
-				EB4F1B9D17A67790B6752DB4 /* dhcp.h */,
-				CBD33B71B9977CC0EB4D852F /* dhcpv6.h */,
-				12774A5FA304D368D84F8CD0 /* dns.h */,
-				4FAEFDD98C26A789DA13425F /* dot11 */,
-				FA7FED78571BA03FEC671CFA /* dot11.h */,
-				8086A0229807FDCCC7A3D09E /* dot1q.h */,
-				7B5D1E98DF0B3F3523983086 /* dot3.h */,
-				F8B4E1BEF28224D9E257D551 /* eapol.h */,
-				9037AE5FC8733BD3D8EC3AD4 /* endianness.h */,
-				18467CD48BA8BB813BDD2866 /* ethernetII.h */,
-				6BDAFB1AD0B987A0EC31BE0D /* exceptions.h */,
-				58EE1A362613BDAE60EF1E28 /* handshake_capturer.h */,
-				B9946261B4A7F42E9FCD8E5A /* hw_address.h */,
-				C9241CB5BBA55E3288B9D942 /* icmp.h */,
-				7AEF13A8EF20B40A5E3DC26F /* icmpv6.h */,
-				B0377560540F58BC1AF58865 /* ieee802_3.h */,
-				4F85440D5C6CFE6DA3DF5752 /* internals.h */,
-				3A2269F4C1E0BFC0EA0D5CF0 /* ip.h */,
-				678B0E4961E4C37EBD2DA8AE /* ip_address.h */,
-				7FFA07B4EFD986EC0AA8F5E9 /* ip_reassembler.h */,
-				01F8E56565328E90A576426E /* ipsec.h */,
-				86F9610D5D3D678763BDE773 /* ipv6.h */,
-				624B402B94E3DD76397A0648 /* ipv6_address.h */,
-				435B2388759B0DF4199D855B /* llc.h */,
-				38DE1E933202415E82584FFE /* loopback.h */,
-				492898E43E641C1D6CE77C88 /* macros.h */,
-				35264992D85F0B216828CDD9 /* network_interface.h */,
-				BC53A4D126323277D887D858 /* offline_packet_filter.h */,
-				8ACEF97636D8603BD2EBA9E7 /* packet.h */,
-				7466F66F107B384EB1435137 /* packet_sender.h */,
-				3EF3771912C482E4C779CF84 /* packet_writer.h */,
-				76BAE8F8349D9BF2E531C15B /* pdu.h */,
-				2C37893CBAF0C463ECA670DF /* pdu_allocator.h */,
-				AECE8F93814362ADBC7F9B9C /* pdu_cacher.h */,
-				9CBEFB7B54315E75ADE7B53D /* pdu_option.h */,
-				0D5464C10E9886FD27AA2851 /* ppi.h */,
-				8BEED11EA238A1A323C0BA5F /* pppoe.h */,
-				9D28A3904B87A871423EB319 /* radiotap.h */,
-				FB4145E9E98996F17D5AA5BD /* rawpdu.h */,
-				E764DF564630020574505E87 /* rsn_information.h */,
-				7B5B6B443F402EB687C90B7C /* sll.h */,
-				1DDCC3D0F2AAA8E3B858AF71 /* small_uint.h */,
-				65DEE0A7BA0DCE7BCFEE65C2 /* snap.h */,
-				CA8725DF10009B354F714D49 /* sniffer.h */,
-				6129778016F302DB06C76A30 /* stp.h */,
-				AA59637AE645839C1D9479F3 /* tcp.h */,
-				DC1D80AF5E6BD6B933A35F5F /* tcp_stream.h */,
-				0A49BB7CD2AB37FC9EFAEEF4 /* timestamp.h */,
-				032937C05529EAE394E19AEC /* tins.h */,
-				FBA16D98A3A068D50D7EA7F9 /* udp.h */,
-				CB27BACE877145CCD4282E61 /* utils.h */,
-			);
-			name = include;
-			sourceTree = "<group>";
-		};
-		8CF22D2C941E0667ED7A5DE7 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				FD50D0E55AD1AECB0050BA20 /* ofxLibtins.cpp */,
-				D3A22467E284A4F9FFCA6D41 /* ofxLibtins.h */,
-				2B58B9620C9C0A17EFC58641 /* ofxLibtinsHttpPacket.h */,
-			);
-			name = src;
-			sourceTree = "<group>";
-		};
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
-				2F0AFACAC911AF409289B95B /* ofxLibtins */,
+				DD78C47E1A11DEAC00186203 /* ofxSniffer */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -338,12 +239,175 @@
 			name = "3rd party frameworks";
 			sourceTree = "<group>";
 		};
-		D5D995C652CB6BF725A4E375 /* libs */ = {
+		DD78C47E1A11DEAC00186203 /* ofxSniffer */ = {
 			isa = PBXGroup;
 			children = (
-				657FE90A0AB258E67C693240 /* libtins */,
+				DD78C47F1A11DEAC00186203 /* src */,
+				DD78C4831A11DEAC00186203 /* libs */,
+			);
+			name = ofxSniffer;
+			sourceTree = "<group>";
+		};
+		DD78C47F1A11DEAC00186203 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				DD78C4801A11DEAC00186203 /* ofxSniffer.cpp */,
+				DD78C4811A11DEAC00186203 /* ofxSniffer.h */,
+				DD78C4821A11DEAC00186203 /* ofxSnifferHttpPacket.h */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = "<group>";
+		};
+		DD78C4831A11DEAC00186203 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				DD78C4841A11DEAC00186203 /* libpcap */,
+				DD78C4881A11DEAC00186203 /* libtins */,
 			);
 			name = libs;
+			path = ../libs;
+			sourceTree = "<group>";
+		};
+		DD78C4841A11DEAC00186203 /* libpcap */ = {
+			isa = PBXGroup;
+			children = (
+				DD78C4851A11DEAC00186203 /* lib */,
+			);
+			path = libpcap;
+			sourceTree = "<group>";
+		};
+		DD78C4851A11DEAC00186203 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				DD78C4861A11DEAC00186203 /* osx */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		DD78C4861A11DEAC00186203 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				DD78C4871A11DEAC00186203 /* libpcap.a */,
+			);
+			path = osx;
+			sourceTree = "<group>";
+		};
+		DD78C4881A11DEAC00186203 /* libtins */ = {
+			isa = PBXGroup;
+			children = (
+				DD78C4891A11DEAC00186203 /* include */,
+				DD78C4D11A11DEAC00186203 /* lib */,
+			);
+			path = libtins;
+			sourceTree = "<group>";
+		};
+		DD78C4891A11DEAC00186203 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				DD78C48A1A11DEAC00186203 /* address_range.h */,
+				DD78C48B1A11DEAC00186203 /* arp.h */,
+				DD78C48C1A11DEAC00186203 /* bootp.h */,
+				DD78C48D1A11DEAC00186203 /* CMakeLists.txt */,
+				DD78C48E1A11DEAC00186203 /* config.h */,
+				DD78C48F1A11DEAC00186203 /* config.h.in */,
+				DD78C4901A11DEAC00186203 /* constants.h */,
+				DD78C4911A11DEAC00186203 /* crypto.h */,
+				DD78C4921A11DEAC00186203 /* cxxstd.h */,
+				DD78C4931A11DEAC00186203 /* data_link_type.h */,
+				DD78C4941A11DEAC00186203 /* dhcp.h */,
+				DD78C4951A11DEAC00186203 /* dhcpv6.h */,
+				DD78C4961A11DEAC00186203 /* dns.h */,
+				DD78C4971A11DEAC00186203 /* dot11 */,
+				DD78C4A11A11DEAC00186203 /* dot11.h */,
+				DD78C4A21A11DEAC00186203 /* dot1q.h */,
+				DD78C4A31A11DEAC00186203 /* dot3.h */,
+				DD78C4A41A11DEAC00186203 /* eapol.h */,
+				DD78C4A51A11DEAC00186203 /* endianness.h */,
+				DD78C4A61A11DEAC00186203 /* ethernetII.h */,
+				DD78C4A71A11DEAC00186203 /* exceptions.h */,
+				DD78C4A81A11DEAC00186203 /* handshake_capturer.h */,
+				DD78C4A91A11DEAC00186203 /* hw_address.h */,
+				DD78C4AA1A11DEAC00186203 /* icmp.h */,
+				DD78C4AB1A11DEAC00186203 /* icmpv6.h */,
+				DD78C4AC1A11DEAC00186203 /* ieee802_3.h */,
+				DD78C4AD1A11DEAC00186203 /* internals.h */,
+				DD78C4AE1A11DEAC00186203 /* ip.h */,
+				DD78C4AF1A11DEAC00186203 /* ip_address.h */,
+				DD78C4B01A11DEAC00186203 /* ip_reassembler.h */,
+				DD78C4B11A11DEAC00186203 /* ipsec.h */,
+				DD78C4B21A11DEAC00186203 /* ipv6.h */,
+				DD78C4B31A11DEAC00186203 /* ipv6_address.h */,
+				DD78C4B41A11DEAC00186203 /* libtins */,
+				DD78C4B51A11DEAC00186203 /* llc.h */,
+				DD78C4B61A11DEAC00186203 /* loopback.h */,
+				DD78C4B71A11DEAC00186203 /* macros.h */,
+				DD78C4B81A11DEAC00186203 /* network_interface.h */,
+				DD78C4B91A11DEAC00186203 /* offline_packet_filter.h */,
+				DD78C4BA1A11DEAC00186203 /* packet.h */,
+				DD78C4BB1A11DEAC00186203 /* packet_sender.h */,
+				DD78C4BC1A11DEAC00186203 /* packet_writer.h */,
+				DD78C4BD1A11DEAC00186203 /* pdu.h */,
+				DD78C4BE1A11DEAC00186203 /* pdu_allocator.h */,
+				DD78C4BF1A11DEAC00186203 /* pdu_cacher.h */,
+				DD78C4C01A11DEAC00186203 /* pdu_option.h */,
+				DD78C4C11A11DEAC00186203 /* ppi.h */,
+				DD78C4C21A11DEAC00186203 /* pppoe.h */,
+				DD78C4C31A11DEAC00186203 /* radiotap.h */,
+				DD78C4C41A11DEAC00186203 /* rawpdu.h */,
+				DD78C4C51A11DEAC00186203 /* rsn_information.h */,
+				DD78C4C61A11DEAC00186203 /* sll.h */,
+				DD78C4C71A11DEAC00186203 /* small_uint.h */,
+				DD78C4C81A11DEAC00186203 /* snap.h */,
+				DD78C4C91A11DEAC00186203 /* sniffer.h */,
+				DD78C4CA1A11DEAC00186203 /* stp.h */,
+				DD78C4CB1A11DEAC00186203 /* tcp.h */,
+				DD78C4CC1A11DEAC00186203 /* tcp_stream.h */,
+				DD78C4CD1A11DEAC00186203 /* timestamp.h */,
+				DD78C4CE1A11DEAC00186203 /* tins.h */,
+				DD78C4CF1A11DEAC00186203 /* udp.h */,
+				DD78C4D01A11DEAC00186203 /* utils.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		DD78C4971A11DEAC00186203 /* dot11 */ = {
+			isa = PBXGroup;
+			children = (
+				DD78C4981A11DEAC00186203 /* CMakeLists.txt */,
+				DD78C4991A11DEAC00186203 /* dot11_assoc.h */,
+				DD78C49A1A11DEAC00186203 /* dot11_auth.h */,
+				DD78C49B1A11DEAC00186203 /* dot11_base.h */,
+				DD78C49C1A11DEAC00186203 /* dot11_beacon.h */,
+				DD78C49D1A11DEAC00186203 /* dot11_control.h */,
+				DD78C49E1A11DEAC00186203 /* dot11_data.h */,
+				DD78C49F1A11DEAC00186203 /* dot11_mgmt.h */,
+				DD78C4A01A11DEAC00186203 /* dot11_probe.h */,
+			);
+			path = dot11;
+			sourceTree = "<group>";
+		};
+		DD78C4B41A11DEAC00186203 /* libtins */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = libtins;
+			sourceTree = "<group>";
+		};
+		DD78C4D11A11DEAC00186203 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				DD78C4D21A11DEAC00186203 /* osx */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		DD78C4D21A11DEAC00186203 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				DD78C4D31A11DEAC00186203 /* libtins.a */,
+			);
+			path = osx;
 			sourceTree = "<group>";
 		};
 		E4328144138ABC890047C5CB /* Products */ = {
@@ -483,8 +547,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
+				DD78C4D41A11DEAC00186203 /* ofxSniffer.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
-				8AD1A3A9F2C2688E4FAB2CDA /* ofxLibtins.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,8 +679,13 @@
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/jonas/Development/openframeworks/openFrameworks/addons/ofxSniffer/libs/libpcap/lib/osx,
+					/Users/jonas/Development/openframeworks/openFrameworks/addons/ofxSniffer/libs/libtins/lib/osx,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
+				USER_HEADER_SEARCH_PATHS = ../libs/libtins/include/;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -637,8 +706,13 @@
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/jonas/Development/openframeworks/openFrameworks/addons/ofxSniffer/libs/libpcap/lib/osx,
+					/Users/jonas/Development/openframeworks/openFrameworks/addons/ofxSniffer/libs/libtins/lib/osx,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = ../libs/libtins/include/;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

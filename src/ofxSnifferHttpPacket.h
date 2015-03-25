@@ -5,7 +5,7 @@
 using namespace Tins;
 
 
-class ofxLibtinsHttpPacket {
+class ofxSnifferHttpPacket {
 public:
     bool isValid = false;
     
@@ -19,9 +19,9 @@ public:
     int srcPort = 0; /**< Source port. */
     int dstPort = 0; /**< Destination port. */
     
-    ofxLibtinsHttpPacket() {}
+    ofxSnifferHttpPacket() {}
     
-    ofxLibtinsHttpPacket(Packet packet) {
+    ofxSnifferHttpPacket(Packet packet) {
         try {
             // Find the IP layer
             const Tins::IP &ip = packet.pdu()->rfind_pdu<Tins::IP>();
