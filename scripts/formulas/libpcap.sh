@@ -19,9 +19,9 @@ FORMULA_TYPES=( "osx" "linux")
 # download the source code and unpack it into LIB_NAME
 function download() {
     curl -LO http://www.tcpdump.org/release/libpcap-$VER.tar.gz
-	tar -xf libpcap-$VER.tar.Gz
+	tar -xf libpcap-$VER.tar.gz
 	mv libpcap-$VER libpcap
-	rm libpcap-$VER.tar.Gz
+	rm libpcap-$VER.tar.gz
 }
 
 # prepare the build environment, executed inside the lib src dir
