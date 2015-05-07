@@ -223,4 +223,3 @@ void ofxSniff::threadedFunction() {
         unlock();
     }
 }
-            
