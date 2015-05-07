@@ -65,13 +65,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		27EE998D1AFAE34700F0A8AC /* ofxSnifferPackets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSnifferPackets.h; sourceTree = "<group>"; };
 		6474CBF019BCE00B003C94E2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6474CBF119BCE00B003C94E2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		6474CBF219BCE00B003C94E2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		DD78C4801A11DEAC00186203 /* ofxSniffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSniffer.cpp; sourceTree = "<group>"; };
 		DD78C4811A11DEAC00186203 /* ofxSniffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxSniffer.h; sourceTree = "<group>"; };
-		DD78C4821A11DEAC00186203 /* ofxSnifferHttpPacket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxSnifferHttpPacket.h; sourceTree = "<group>"; };
 		DD78C4871A11DEAC00186203 /* libpcap.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpcap.a; sourceTree = "<group>"; };
 		DD78C48A1A11DEAC00186203 /* address_range.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = address_range.h; sourceTree = "<group>"; };
 		DD78C48B1A11DEAC00186203 /* arp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arp.h; sourceTree = "<group>"; };
@@ -251,9 +251,9 @@
 		DD78C47F1A11DEAC00186203 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				27EE998D1AFAE34700F0A8AC /* ofxSnifferPackets.h */,
 				DD78C4801A11DEAC00186203 /* ofxSniffer.cpp */,
 				DD78C4811A11DEAC00186203 /* ofxSniffer.h */,
-				DD78C4821A11DEAC00186203 /* ofxSnifferHttpPacket.h */,
 			);
 			name = src;
 			path = ../src;

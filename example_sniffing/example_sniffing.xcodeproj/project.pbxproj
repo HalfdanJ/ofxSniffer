@@ -71,7 +71,7 @@
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		DD78C4801A11DEAC00186203 /* ofxSniffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSniffer.cpp; sourceTree = "<group>"; };
 		DD78C4811A11DEAC00186203 /* ofxSniffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxSniffer.h; sourceTree = "<group>"; };
-		DD78C4821A11DEAC00186203 /* ofxSnifferHttpPacket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxSnifferHttpPacket.h; sourceTree = "<group>"; };
+		DD78C4821A11DEAC00186203 /* ofxSnifferPackets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxSnifferPackets.h; sourceTree = "<group>"; };
 		DD78C4871A11DEAC00186203 /* libpcap.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpcap.a; sourceTree = "<group>"; };
 		DD78C48A1A11DEAC00186203 /* address_range.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = address_range.h; sourceTree = "<group>"; };
 		DD78C48B1A11DEAC00186203 /* arp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arp.h; sourceTree = "<group>"; };
@@ -253,7 +253,7 @@
 			children = (
 				DD78C4801A11DEAC00186203 /* ofxSniffer.cpp */,
 				DD78C4811A11DEAC00186203 /* ofxSniffer.h */,
-				DD78C4821A11DEAC00186203 /* ofxSnifferHttpPacket.h */,
+				DD78C4821A11DEAC00186203 /* ofxSnifferPackets.h */,
 			);
 			name = src;
 			path = ../src;

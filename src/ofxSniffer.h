@@ -4,7 +4,7 @@
 #include "ofThread.h"
 #include "ofEvents.h"
 
-#include "ofxSnifferHttpPacket.h"
+#include "ofxSnifferPackets.h"
 #include "ofThreadChannel.h"
 
 #include "tins.h"
@@ -28,6 +28,12 @@ public:
     void startSniffing(string interface="en0", bool monitorMode = false);
 
     /*!
+     Iterate through packet types and return a string containing all of them.
+     @param packet The packet to print.
+     */
+    string toString(const Packet& packet);
+    
+    /*!
      Event emitted every time a packet is being sniffed. 
      
      Note: This event is being emitted on a background thread!
@@ -40,10 +46,24 @@ public:
      */
     ofEvent<ofxSnifferHttpPacket> httpPacketEvent;
     
+    /*!
+     Event emitted every time a beacon frame is detected.
+     This event is emitted on the main thread.
+     */
+    ofEvent<ofxSnifferBeaconFrame> beaconFrameEvent;
+    
+    /*!
+     Event emitted every time a probe request frame is detected.
+     This event is emitted on the main thread.
+     */
+    ofEvent<ofxSnifferProbeRequestFrame> probeRequestFrameEvent;
+    
 private:
     void threadedFunction();
     void update(ofEventArgs &);
     
     string interface;
     ofThreadChannel<ofxSnifferHttpPacket> httpPackets;
+    ofThreadChannel<ofxSnifferBeaconFrame> beaconFrames;
+    ofThreadChannel<ofxSnifferProbeRequestFrame> probeRequestFrames;
 };
